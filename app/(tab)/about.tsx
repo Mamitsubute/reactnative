@@ -1,21 +1,21 @@
-import { Text, View, StyleSheet } from 'react-native';
+import { View, StyleSheet } from "react-native";
+import { WebView } from "react-native-webview";
 
-export default function AboutScreen() {
-  return (
-    <View style={styles.container}>
-      <Text style={styles.text}>About screen</Text>
-    </View>
-  );
+export default function WebScreen() {
+	return (
+		<View style={styles.container}>
+			<WebView
+				source={{ uri: "https://magicpod.com/" }}
+				startInLoadingState
+				javaScriptEnabled
+				domStorageEnabled
+			/>
+		</View>
+	);
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#25292e',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  text: {
-    color: '#fff',
-  },
+	container: {
+		flex: 1,
+	},
 });
